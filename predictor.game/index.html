@@ -1,0 +1,39 @@
+<script defer src="https://unpkg.com/appbase-js/dist/appbase-js.umd.min.js"></script>
+<script type="module" defer src="js/main.js"></script>
+<link rel="stylesheet" type="text/css" href="css/game.css">
+
+
+<section class="header">
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/en/e/ef/2019_Rugby_World_Cup_%28logo%29.svg">
+    <p class="title">Rugby World Cup Predictor</p>
+</section>
+
+<table id="odds" class="tables">
+  <tr>
+    <th>Team</th>
+    <th>Code</th>
+    <th>Wins</th>
+    <th>Odds</th>
+    <th>Odds (decimal)</th>
+    <th>Rank</th>
+    <th>Prediction</th>
+  </tr>
+</table>
+
+<table id="top10" class="top10">
+    <tr>
+        <th>Position</th>
+        <th>Name</th>
+        <th>Score</th>
+    </tr>
+</table>
+
+<a href="result.html" class="link">Full results</a>
+
+<section class="login">
+    <p class="section_p">Submit your prediction</p>
+    <input id="name" type="text" placeholder="Name"/>
+    <p><input id="pass" type="text" placeholder="Password"/></p>
+    <button id="login" class="button_panel">Login</button>
+</section>
+

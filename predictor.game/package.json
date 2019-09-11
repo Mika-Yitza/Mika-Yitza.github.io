@@ -1,0 +1,17 @@
+{
+  "name": "mago.learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "appbase-js": "^4.0.2-beta.7",
+    "googleapis": "^39.2.0",
+    "sheetdb-js": "^1.0.3"
+  }
+}
