@@ -27,7 +27,7 @@
   .title {
     margin-left: 40%;
     position: absolute;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Comic Sans;
+    font-family:Helvetica, Arial;
     color: #fff;
     font-size:25px;
   }
@@ -141,6 +141,7 @@
 }
 
 .details-title{
+  font-family:Helvetica, Arial;
   margin-left: 10%;
   font-size:25px;
 }
