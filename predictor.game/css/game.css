@@ -18,7 +18,7 @@
   }
 
   .play-img {
-    margin-left: 32%;
+    margin-left: 25%;
     position: absolute;
     bottom: 10;
     height: 30%;
@@ -135,7 +135,7 @@
   height: 70%;
   margin-right: 15%;
   margin-top: 5%;
-  background: rgb(179, 210, 216);
+  background: rgb(243, 232, 183);
   border-style:solid;
   border-width:1px;
 }
