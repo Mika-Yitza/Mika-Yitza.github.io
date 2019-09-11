@@ -76,11 +76,11 @@ window.onload = function() {
         oddsCell5.innerHTML = data.teams[t].rank;
         switch(true){
             case (data.teams[t].rank == 1): {
-                oddsCell6.innerHTML = "Gold Medal";
+                oddsCell6.innerHTML = "Winner";
                 break;
             };
             case (data.teams[t].rank == 2): {
-                oddsCell6.innerHTML = "Silver Medal";
+                oddsCell6.innerHTML = "Runner Up";
                 break;
             };
             case (data.teams[t].rank == 3): {

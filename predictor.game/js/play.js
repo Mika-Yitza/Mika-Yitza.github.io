@@ -8,6 +8,14 @@ let details = [];
 let total = 0;
 let lastID;
 
+const img = [];
+for(let x=0; x<3; x++){
+    img[x] = document.createElement(`img`);
+    img[x].id = `img${x}`;
+    img[x].src = "https://banner2.kisspng.com/20180714/efc/kisspng-2019-rugby-world-cup-2007-rugby-world-cup-2017-wor-trophy-globe-5b4a66a43ef0c2.2755513615316025962578.jpg";
+    img[x].classList.add("image");
+}
+
 const appbaseRef = Appbase({
 	url: 'https://scalr.api.appbase.io',
 	app: 'RWC2019PointsTable',
@@ -15,7 +23,7 @@ const appbaseRef = Appbase({
 });
 
 window.onload = function() {    
-    let playRow, playCell0, playCell1, playCell2, playCell3, playCell4;
+    let playRow, playCell0, playCell1, playCell2, playCell3, playCell4, playCell5, playCell6, playCell7;
     for(let t=0; t<data.teams.length; t++){
         minus[t] = document.createElement(`button`);
         minus[t].innerHTML = "-";
@@ -35,17 +43,50 @@ window.onload = function() {
         playCell2 = playRow.insertCell(2);
         playCell3 = playRow.insertCell(3);
         playCell4 = playRow.insertCell(4);
+        playCell5 = playRow.insertCell(5);
+        playCell6 = playRow.insertCell(6);
+        playCell7 = playRow.insertCell(7);
         playCell0.innerHTML = data.teams[t].name;
         playCell0.classList.add(`${data.teams[t].id}`);
-        playCell1.innerHTML = minus[t].outerHTML;
+        for(let a=0; a<data.teams[t].rwcwins; a++){
+            playCell1.innerHTML += img[a].outerHTML;
+        }
+        playCell2.innerHTML = data.teams[t].oddsfra;
+        switch(true){
+            case (data.teams[t].rank == 1): {
+                playCell3.innerHTML = "Winner";
+                break;
+            };
+            case (data.teams[t].rank == 2): {
+                playCell3.innerHTML = "Runner Up";
+                break;
+            };
+            case (data.teams[t].rank == 3): {
+                playCell3.innerHTML = "Bronze Medal";
+                break;
+            };
+            case (data.teams[t].rank == 4): {
+                playCell3.innerHTML = "4th place";
+                break;
+            };
+            case (data.teams[t].rank <= 8): {
+                playCell3.innerHTML = "Quater finalist";
+                break;
+            };
+            default: {
+                playCell3.innerHTML = "Group Stage";
+            };
+        }
+
+        playCell4.innerHTML = minus[t].outerHTML;
         minus[t].onclick = function() {
             if(points[t].innerHTML > 0){
                 points[t].innerHTML -= 1;
             }
         };
-        playCell2.innerHTML = points[t].outerHTML;
-        playCell3.innerHTML = plus[t].outerHTML;
-        playCell4.innerHTML = details[t].outerHTML;
+        playCell5.innerHTML = points[t].outerHTML;
+        playCell6.innerHTML = plus[t].outerHTML;
+        playCell7.innerHTML = details[t].outerHTML;
     }
 
     for(let i=0; i<data.teams.length; i++){
@@ -84,7 +125,25 @@ window.onload = function() {
             document.getElementById(`odds`).innerHTML = "Odds: " + data.teams[i].oddsfra + "</br>";
             let m=1;
             while(data.teams[i][`multiplier${m}`]){
-                document.getElementById(`odds`).innerHTML += "</br> Position " + m + " : " + data.teams[i][`multiplier${m}`] + " points for every point spent";
+                let position;
+                switch(m){
+                    case 1:{
+                        position = "Winner";
+                        break;
+                    };
+                    case 2:{
+                        position = "Runner Up";
+                        break;
+                    };
+                    case 3:{
+                        position = "Bronze";
+                        break;
+                    };
+                    default:{
+                        position = m + "th place"
+                    }
+                }
+                document.getElementById(`odds`).innerHTML += "</br>" + position + " : " + data.teams[i][`multiplier${m}`] + " points for every point spent";
                 m++;
             }
             switch(data.teams[i].group){

@@ -12,7 +12,7 @@
   }
 
   .logo {
-    margin-left: 10%;
+    margin-left: 5%;
     height: 200%;
     position: absolute;
   }
@@ -36,7 +36,7 @@
     border-collapse:collapse;
     border-spacing:0;
     float: left;
-    margin-left: 20%;
+    margin-left: 15%;
     margin-top: 5%;
   }
   
@@ -131,7 +131,7 @@
 .details{
   float: right;
   position: relative;
-  width: 40%;
+  width: 30%;
   height: 70%;
   margin-right: 15%;
   margin-top: 5%;

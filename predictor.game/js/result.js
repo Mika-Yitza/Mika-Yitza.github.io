@@ -75,3 +75,7 @@ window.onload = function() {
         alert(error)
       })
 };
+
+document.getElementById(`back`).onclick = function() {
+    window.open(`index.html`, "_self");
+}
