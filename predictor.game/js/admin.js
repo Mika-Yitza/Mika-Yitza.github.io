@@ -106,10 +106,7 @@ document.getElementById(`score`).onclick = function() {
             if(array[k]._source[prop] > 0 && prop !== "pointssubmitted" && prop !== "score"){
                 for(let t=0; t<data.teams.length; t++){
                     if(data.teams[t].id == prop){
-                        console.log(data.teams[t])
-                        console.log(finalResult._source[prop])
-                        userScore = array[k]._source[prop] * data.teams[t][`multiplier${finalResult._source[prop]}`];
-                        console.log(userScore)
+                        userScore += array[k]._source[prop] * data.teams[t][`multiplier${finalResult._source[prop]}`];
                     }
                 }
             }
@@ -127,6 +124,10 @@ document.getElementById(`score`).onclick = function() {
         })
         .then(function(res) {
             console.log('successfully updated: ', res);
+            if(k==array.length-1){
+                alert("results updated")
+                location.reload();
+            }
         })
         .catch(function(err) {
             console.log('update document error: ', err);
