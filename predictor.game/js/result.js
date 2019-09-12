@@ -23,17 +23,19 @@ window.onload = function() {
       }).then(function(response) {
         console.log(response);
         array = response.hits.hits;
+        for(let x=0; x<array.length; x++){
+            if(array[x]._id == "AWzYS72NuDNiuUUj251k"){
+                array.splice(x, 1);
+            }
+        }
+
         for (let i=0; i<array.length; i++){
-            for(let j=0; j<array.length; j++){
-                if(array[i]._source.score > array[j]._source.score){
-                        let temp = array[i];
-                        array[i] = array[j];
+            for(let j=0; j<array.length-1; j++){
+                if(array[j]._source.score < array[j+1]._source.score){
+                        let temp = array[j+1];
+                        array[j+1] = array[j];
                         array[j] = temp;
                  }
-            }
-            if(array[i]._id == "AWzYS72NuDNiuUUj251k"){
-                result = array[i];
-                array.splice(i, 1);
             }
         }
         let row, cell0, cell1, cell2, cell3;

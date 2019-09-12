@@ -215,7 +215,7 @@ document.getElementById(`submit`).onclick = function() {
         })
         .then(function(res) {
             console.log('successfully updated: ', res);
-            window.open(`index.html`, "_self");
+            window.open(`predictions.html`, "_self");
         })
         .catch(function(err) {
             console.log('update document error: ', err);
