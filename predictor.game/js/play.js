@@ -35,7 +35,7 @@ window.onload = function() {
         plus[t].innerHTML = "+";
         plus[t].id = `plus${t}`;
         details[t] = document.createElement(`button`);
-        details[t].innerHTML = "details";
+        details[t].innerHTML = "More details";
         details[t].id = `details${t}`;
         playRow = play.insertRow(t+1);
         playCell0 = playRow.insertCell(0);
@@ -94,7 +94,7 @@ window.onload = function() {
             if(document.getElementById(`points${i}`).innerHTML > 0){
                 document.getElementById(`points${i}`).innerHTML = parseInt(document.getElementById(`points${i}`).innerHTML) - 1;
                 total--;
-                document.getElementById(`total`).innerHTML = "Total: " + total;
+                document.getElementById(`totalPoints`).innerHTML = total;
             }
         };
     }
@@ -104,7 +104,7 @@ window.onload = function() {
             if(total < 10){
                 document.getElementById(`points${i}`).innerHTML = parseInt(document.getElementById(`points${i}`).innerHTML) + 1;
                 total++;
-                document.getElementById(`total`).innerHTML = "Total: " + total;
+                document.getElementById(`totalPoints`).innerHTML = total;
             }
             else{
                 alert("You can only spend 10 points.")

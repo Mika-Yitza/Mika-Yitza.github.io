@@ -15,6 +15,7 @@ window.onload = function() {
     appbaseRef.search({
         type: "doc",
             body: {
+                size : 100,
                 query: {
                     match_all: {},
                 },
@@ -38,7 +39,7 @@ window.onload = function() {
         let row, cell0, cell1, cell2, cell3;
         for(let k=0; k<array.length; k++){
             details[k] = document.createElement(`button`);
-            details[k].innerHTML = "details";
+            details[k].innerHTML = "More details";
             details[k].id = `details${k}`;
             row = top.insertRow(k+1);
             cell0 = row.insertCell(0);

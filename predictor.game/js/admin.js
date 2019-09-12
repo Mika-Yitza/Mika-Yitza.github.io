@@ -17,6 +17,7 @@ window.onload = function() {
     appbaseRef.search({
         type: "doc",
             body: {
+                size : 100,
                 query: {
                     match_all: {},
                 },
