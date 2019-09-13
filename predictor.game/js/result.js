@@ -60,7 +60,6 @@ window.onload = function() {
                 document.getElementById(`title`).innerHTML = array[i]._source.name;
                 for(let prop in array[i]._source){
                     if(array[i]._source[prop] > 0 && array[i]._source[prop] !== true){
-                        console.log(prop)
                         if(prop == "score"){
                             document.getElementById(`description`).innerHTML += "</br> Total points: " + array[i]._source[prop] + "</br>" ;
                         }
