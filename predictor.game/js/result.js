@@ -25,6 +25,7 @@ window.onload = function() {
         array = response.hits.hits;
         for(let x=0; x<array.length; x++){
             if(array[x]._id == "AWzYS72NuDNiuUUj251k"){
+                result = array[x];
                 array.splice(x, 1);
             }
         }
@@ -59,6 +60,7 @@ window.onload = function() {
                 document.getElementById(`title`).innerHTML = array[i]._source.name;
                 for(let prop in array[i]._source){
                     if(array[i]._source[prop] > 0 && array[i]._source[prop] !== true){
+                        console.log(prop)
                         if(prop == "score"){
                             document.getElementById(`description`).innerHTML += "</br> Total points: " + array[i]._source[prop] + "</br>" ;
                         }
@@ -71,6 +73,9 @@ window.onload = function() {
                             }
                         }
                     }
+                }
+                if(document.getElementById(`description`).innerHTML == ""){
+                    document.getElementById(`description`).innerHTML = array[i]._source.name + " has not submitted any predictions yet."
                 }
             };
         }
