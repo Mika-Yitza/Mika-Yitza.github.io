@@ -114,16 +114,21 @@ document.getElementById(`login`).onclick = function() {
     const pass = document.getElementById("pass").value;
     let found = false;
     for (let i=0; i<array.length; i++){
-        if(array[i]._source.name == name){
-            if(array[i]._source.password == pass){
-            window.open(`play.html?id=${array[i]._id}`, "_self");
+            if(array[i]._source.name == name){
+                if(array[i]._source.password == pass){
+                    if(array[i]._source.pointssubmitted === false){
+                         window.open(`play.html?id=${array[i]._id}`, "_self");
+                    }
+                    else{
+                        alert("You have already sent us your predictions.");
+                    }
+                }
+                else{
+                alert("Incorrect password.");
+                }
+                found = true;
             }
-            else{
-            alert("Incorrect password.");
-            }
-            found = true;
         }
-    }
     if(!found){
         alert("Player doesn't exist.");
     }
