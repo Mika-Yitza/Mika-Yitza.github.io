@@ -173,9 +173,14 @@ window.onload = function() {
 document.getElementById(`rules`).onclick = function() {
     document.getElementById(`details`).classList.remove(`${lastID}`);
     document.getElementById(`title`).innerHTML = "Rules";
-    document.getElementById(`cups`).innerHTML = "10 points available.";
-    document.getElementById(`description`).innerHTML = "Use your points wisely and predict which teams will exceed expectations.";
-    document.getElementById(`odds`).innerHTML = `Click "More details" for extra info related to each team.`;
+    document.getElementById(`cups`).innerHTML = "";
+    document.getElementById(`description`).innerHTML = `In this game, you have 10 points to spend on the teams that you think that will match or out-perform their predicted position at Rugby World Cup 2019.
+    </br></br>For example, based on the bookie's odds of them winning the World Cup, England are placed 3rd. If they will win the Bronze Final their predicted position will be achieved, and will return 10 points for every point spent on them. But if England win the tournament, they will out-perform and will bring you 20 points for every point spent. However, if they fail to win the Bronze Final, you would earn 0 points from England, because they would not have equalled their prediction of 3rd place.`;
+    document.getElementById(`odds`).innerHTML = `You may spend your points in which ever way you like: 10 points on one team, 2 points on 5 teams, or 1 point on 10 teams; it's up to you! </br>
+    No teams earn points for being knocked out in the pool stage. </br>
+    Places 5-8 are separated first by 'Games Won', then by 'Tries Scored'. </br>
+    All predictions must be submitted before kickoff of Japan vs Russia at 11:30am Friday September 20th </br></br>
+    You can only enter your predictions once, so pick carefully and good luck!`;
     document.getElementById(`playImg`).src = "https://media.giphy.com/media/l0MYtXPklAUqPUGFW/giphy.gif";
 };
 
