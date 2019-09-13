@@ -175,7 +175,7 @@ document.getElementById(`rules`).onclick = function() {
     document.getElementById(`title`).innerHTML = "Rules";
     document.getElementById(`cups`).innerHTML = "10 points available.";
     document.getElementById(`description`).innerHTML = "Use your points wisely and predict which teams will exceed expectations.";
-    document.getElementById(`odds`).innerHTML = "Click details for extra info related to each team.";
+    document.getElementById(`odds`).innerHTML = `Click "More details" for extra info related to each team.`;
     document.getElementById(`playImg`).src = "https://media.giphy.com/media/l0MYtXPklAUqPUGFW/giphy.gif";
 };
 
